@@ -1,6 +1,7 @@
 import { Router } from "express";
 import compression from "compression";
 import logger from "../winston/logger.js";
+import os from "os"
 
 const router = Router();
 
@@ -11,7 +12,7 @@ const obj = {
   path: process.execPath,
   id: process.pid,
   folder: process.cwd(),
-
+  cpu: os.cpus().length,
 };
 
 router.get("/" , (req, res) => {
@@ -47,5 +48,14 @@ router.get("*", (req, res) => {
   res.send("esta ruta no es valida");
 });
 
+router.get('/artillery', (req, res) => {
+    try {
+        logger.info(`Un usuario ingreso a la ruta: ${req.url} con metodo GET`)
+        console.log(obj)
+        res.json(obj);
+    } catch (error) {
+        logger.error(error)
+    }
+});
 
 export default router;

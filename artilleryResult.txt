@@ -1,0 +1,22 @@
+{
+  "aggregate": {
+    "counters": {
+      "vusers.created_by_name.0": 500,
+      "vusers.created": 500,
+      "http.requests": 500,
+      "errors.ECONNREFUSED": 500,
+      "vusers.failed": 500
+    },
+    "rates": {
+      "http.request_rate": 250
+    },
+    "firstCounterAt": 1659668664437,
+    "lastCounterAt": 1659668665435,
+    "firstMetricAt": 1659668664437,
+    "lastMetricAt": 1659668665435,
+    "period": 1659668660000,
+    "summaries": {},
+    "histograms": {}
+  },
+  "intermediate": []
+}
